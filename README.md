@@ -70,23 +70,19 @@ public void onRequestPermissionsResult(int requestCode, String permissions[], in
 4.框架使用示例：
 ---
 
-* 4.1、添加依赖：
+* 4.1、添加依赖和配置：
 
 ```Java
-Step 1.Add it in your root build.gradle at the end of repositories:
-
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
-Step 2. Add the dependency
+}
 
-	dependencies {
-	        implementation 'com.github.respost:OmgPermission:1.0'
-	}
- 
+dependencies {
+	implementation 'com.github.respost:OmgPermission:1.0'
+}
 ```
 * 4.2、一行代码实现权限请求，就是这么简单！
 
