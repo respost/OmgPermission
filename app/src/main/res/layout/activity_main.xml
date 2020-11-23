@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Android权限管理请求框架"
+        android:background="@color/green"
+        android:textColor="@android:color/white"
+        android:textSize="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <Button
+            android:id="@+id/storageButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="申请存储权限"
+            android:textColor="#fff"
+            android:background="@color/blue"/>
+        <Button
+            android:id="@+id/cameraButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="申请相机权限"
+            android:textColor="#fff"
+            android:background="@color/red"/>
+    </LinearLayout>
+
+</LinearLayout>
