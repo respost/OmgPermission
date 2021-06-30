@@ -9,7 +9,6 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
 
-
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 30
@@ -24,6 +23,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    //添加此配置的作用：让过时的api或者不合规矩的语法展现出来
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
         }
     }
 

@@ -1,5 +1,5 @@
 # Android权限动态请求框架
-### 开发语言：Android
+### 开发语言：java
 ### 开发工具：Android Studio
 
 1.关于Android6.0之后的运行时权限说明
@@ -22,17 +22,20 @@ Google在Android 6.0开始引入了权限申请机制，将所有权限分成了
 
 * 2.3、危险权限分组列表
 
-|分组|Permissions|
-|:-----------:|:-----------:|
-|CALENDAR|android.permission.READ_CALENDAR<br>android.permission.WRITE_CALENDAR|
-|CAMERA|android.permission.CAMERA|
-|CONTACTS|android.permission.READ_CONTACTS<br>android.permission.WRITE_CONTACTS<br>android.permission.GET_ACCOUNTS|
-|LOCATION|android.permission.ACCESS_FINE_LOCATION<br>android.permission.ACCESS_COARSE_LOCATION|
-|MICROPHONE|android.permission.RECORD_AUDIO|
-|PHONE|android.permission.READ_PHONE_STATE<br>android.permission.CALL_PHONE<br>android.permission.READ_CALL_LOG<br>android.permission.WRITE_CALL_LOG<br>com.android.voicemail.permission.ADD_VOICEMAIL<br>android.permission.USE_SIP<br>android.permission.PROCESS_OUTGOING_CALLS|
-|SENSORS|android.permission.BODY_SENSORS|
-|SMS|android.permission.SEND_SMS<br>android.permission.RECEIVE_SMS<br>android.permission.READ_SMS<br>android.permission.RECEIVE_WAP_PUSH<br>android.permission.RECEIVE_MMS<br>android.permission.READ_CELL_BROADCASTS|
-|STORAGE|android.permission.READ_EXTERNAL_STORAGE<br>android.permission.WRITE_EXTERNAL_STORAGE|
+|权限分组|权限名称|介绍|
+|:-----------:|:-----------|:-----------|
+|CALENDAR|android.permission.READ_CALENDAR<br>android.permission.WRITE_CALENDAR|读取系统日历<br>写入系统日历|
+|CAMERA|android.permission.CAMERA|相机权限|
+|CONTACTS|android.permission.READ_CONTACTS<br>android.permission.WRITE_CONTACTS<br>android.permission.GET_ACCOUNTS|读取联系人<br>写入联系人<br>读取账号|
+|LOCATION|android.permission.ACCESS_FINE_LOCATION<br>android.permission.ACCESS_COARSE_LOCATION<br>android.permission.ACCESS_BACKGROUND_LOCATION<br>android.permission.ACCESS_MEDIA_LOCATION|获取精准位置<br>获取大概位置<br>在后台获取位置（API>=29）<br>读取照片中的地理位置（API>=29）|
+|MICROPHONE|android.permission.RECORD_AUDIO|录音|
+|PHONE|android.permission.READ_PHONE_STATE<br>android.permission.CALL_PHONE<br>android.permission.READ_CALL_LOG<br>android.permission.WRITE_CALL_LOG<br>android.permission.USE_SIP<br>Manifest.permission.ADD_VOICEMAIL<br>android.permission.PROCESS_OUTGOING_CALLS<br>android.permission.ANSWER_PHONE_CALLS<br>android.permission.READ_PHONE_NUMBERS|获取手机信息<br>打电话<br>读取通话记录<br>写入通话记录<br>使用sip(会话发起协议)网络电话<br>添加系统中的语音邮件<br>监听、控制、取消呼出电话的权限（API<29）<br>接听电话（API>=29）<br>读取手机号码（API>=29）|
+|SENSORS|android.permission.BODY_SENSORS<br>android.permission.ACTIVITY_RECOGNITION|使用生命体征相关传感器|
+|SMS|android.permission.SEND_SMS<br>android.permission.RECEIVE_SMS<br>android.permission.READ_SMS<br>android.permission.RECEIVE_WAP_PUSH<br>android.permission.RECEIVE_MMS<br>android.permission.READ_CELL_BROADCASTS|发送短信<br>接收短信<br>读取短信<br>接收WapPush信息<br>接收彩信<br>读取广播|
+|STORAGE|android.permission.READ_EXTERNAL_STORAGE<br>android.permission.WRITE_EXTERNAL_STORAGE<br>android.permission.MANAGE_EXTERNAL_STORAGE|读取存储(API<30)<br>写入存储(API<30)<br>存储权限(API>=30)|
+|PACKAGES|android.permission.REQUEST_INSTALL_PACKAGES|安装应用权限（API>=26）|
+|ALERTWINDOW|android.permission.SYSTEM_ALERT_WINDOW|悬浮窗权限（API>=23）|
+|SETTINGS|android.permission.WRITE_SETTINGS|系统设置权限（API>=23）|
 
 3、运行时请求权限
 ---
